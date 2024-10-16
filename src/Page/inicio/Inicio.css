@@ -1,0 +1,154 @@
+:root{
+    --color-text-image:linear-gradient(to right, #00DFA2, #0079FF)
+}
+.container-inicio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-title-inicio{
+    width: 130%;
+}
+.foto-perfil{
+    width: 100%;
+}
+.text-titles-subtitles{
+    background-image: var(--color-text-image);
+    background-clip: text;
+    color: transparent;
+}
+.textanimation-perfil{
+    position: relative;
+
+    background-image: var(--color-text-image);
+    background-clip: text;
+    color: transparent;
+}
+.textanimation-perfil::before{
+    content: 'Full-Stack';
+    animation: roles 20s infinite;
+}
+.textanimation-perfil::after{
+    content: '';
+    background-color: #111111;
+    /* background-color: #002945; */
+    position: absolute;
+    width:calc(100% + 8px);
+    height: 100%;
+    border-left: 2px solid #0079FF;
+    right: -8px;
+    animation: cursor 6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 2px solid #112a46;
+    }
+}
+
+@keyframes roles{
+    0%, 20%{
+        content: 'Full-Stack';
+    }
+    21%, 40%{
+        content: 'Front-End';
+    }
+    41%, 60%{
+        content: 'Back-End';
+    }
+    61%, 80%{
+        content: 'Innovator';
+    }
+    81%, 100%{
+        content: 'Problem Solver';
+    }
+}
+@keyframes typing{
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,10%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
+
+
+/* foto de perfil y burbujas  */
+.container-burbujas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}
+.container-burbujas .burbujas{
+    padding: 1rem 0.8rem;
+    background-color: #fff;
+    margin: 5px 0;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 6px #0d1e4598;
+
+}
+.container-burbujas .burbujas:nth-of-type(1){
+    position: relative;
+    top: -180px;
+    right: -100px;
+}
+.container-burbujas .burbujas:nth-of-type(2){
+    position: relative;
+    top: -330px;
+    right: -300px;
+}
+.container-burbujas .burbujas:nth-of-type(3){
+    position: relative;
+    top: -310px;
+    right: -480px;
+}
+.container-burbujas .burbujas:nth-of-type(4){
+    position: relative;
+    top: -200px;
+    right: -520px;
+}
+.container-burbujas .burbujas:nth-of-type(5){
+    position: relative;
+    top: -90px;
+    right: -480px;
+}
+.container-burbujas .burbujas:nth-of-type(6){
+    position: relative;
+    top: -340px;
+    right: -50px;
+}
+.container-burbujas .burbujas:nth-of-type(7){
+    position: relative;
+    top: -220px;
+    right: -120px;
+}
+.container-burbujas .burbujas:nth-of-type(8){
+    position: relative;
+    top: -240px;
+    right: -300px;
+}
+/* Estilo responsive */
+@media (max-width: 768px) {
+    .container-inicio {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .container-title-inicio{
+        text-align: center;
+        width: 80%;
+    }
+    .container-title-inicio .textanimation-perfil{
+        font-size: 2.5rem;
+    }
+
+    /* .category {
+        max-width: 100%;
+    } */
+}

@@ -1,0 +1,13 @@
+@media (max-width: 900px) {
+    .img-contacto {
+        display: none;
+    }
+}
+@media (max-width: 450px) {
+    .img-contacto {
+        display: none;
+    }
+    .title-contacto .title{
+        font-size: 25px;
+    }
+}

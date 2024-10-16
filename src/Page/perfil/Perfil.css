@@ -1,0 +1,173 @@
+:root{
+    --color-text-image:linear-gradient(to right, #00DFA2, #0079FF)
+}
+.section-portafolio{
+    border-radius: 10px;
+    width: 100%;
+}
+.container-perfil{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+}
+.card-perfil-foto{
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* width: 30%;
+    height: 30%; */
+    padding: 0.5rem;
+    border-radius: 14px;
+    background-color: #242424;
+    box-shadow: 2px 2px 6px #0b1b451d;
+
+    width: 100%;
+    border-radius: 50%;
+    height: 300px;
+    overflow: hidden;
+    /* overflow: hidden;
+    margin-right: 20px; */
+}
+.card-perfil-foto img{
+    width: 20rem;
+}
+.container-perfil .container-description-perfil{
+    color: #ccc;
+    /* width:50%; */
+    padding: 1rem;
+    margin-left: 0.5rem;
+    /* background-color: red; */
+    display: block;
+}
+.container-perfil .container-description-perfil .nombre-perfil{ 
+    background-image: var(--color-text-image);
+    background-clip: text;
+    color: transparent;
+    margin: 1rem 0;
+    text-align: center;
+}
+.container-perfil .container-description-perfil .parrafo-perfil{
+    text-align: justify;
+}
+.container-perfil .container-description-perfil .parrafo-perfil > .parrafo-perfil{
+    text-align: justify;
+}
+.container-perfil .container-description-perfil .description-perfil{
+    margin: 2rem 0;
+    text-align: justify;
+}
+.link-perfil{
+    text-align: center;
+}
+.skill-title-perfil{
+    font-size: 50rem;
+    margin: 1rem 0;
+    margin: 1rem 0;
+    text-align: center;
+}
+.skill-perfil{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+.skill-perfil .skill-perfil-burbuja{
+    padding: 0.5rem;
+    padding: 0.5rem 0;
+    background-color: #242424;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.skill-perfil .skill-perfil-burbuja:hover{
+    background-color: #dcdcdc;
+
+}
+.skill-perfil .skill-perfil-burbuja img{
+    width: 60px;
+}
+
+/* Estilo responsive */
+@media (max-width: 1020px) {
+    .container-perfil {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .container-perfil .container-description-perfil{
+        padding: 0.5rem;
+    }
+    .container-perfil .container-description-perfil .nombre-perfil{ 
+        font-size: 18px;
+    }
+    .container-perfil .container-description-perfil .description-perfil{
+        margin: 2rem 0;
+        font-size: 14px;
+    }
+    .card-perfil-foto{
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        /* width: 30%;
+        height: 30%; */
+        padding: 0.5rem;
+        border-radius: 14px;
+        background-color: #242424;
+        box-shadow: 2px 2px 6px #0b1b451d;
+    
+        width: 20%;
+        border-radius: 50%;
+        height: 100px;
+        overflow: hidden;
+        /* overflow: hidden;
+        margin-right: 20px; */
+    }
+    .card-perfil-foto img{
+        width: 5rem;
+    }
+    .container-skills-perfil .skill-title-perfil{
+        font-size: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .container-perfil {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .container-perfil .container-description-perfil{
+        padding: 5px;
+    }
+    .container-perfil .container-description-perfil .nombre-perfil{ 
+        font-size: 20px;
+    }
+    .container-perfil .container-description-perfil .description-perfil{
+        margin: 2rem 0;
+        font-size: 14px;
+    }
+    .card-perfil-foto,
+    .card-perfil-foto img{
+       display: none;
+    }
+
+}
+@media (max-width: 430px) {
+    .container-skills-perfil {
+        display: none;
+    }
+    .container-perfil .container-description-perfil{
+        padding: 2px;
+    }
+    .container-perfil .container-description-perfil .description-perfil{
+        font-size: 13px;
+        text-align: center;
+    }
+    
+}
