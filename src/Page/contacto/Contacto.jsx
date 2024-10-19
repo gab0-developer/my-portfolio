@@ -1,13 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Contacto.css'
 import { Alert, Autocomplete, Box, Button, InputLabel, Stack, TextField, Typography } from '@mui/material'
 import Grid from '@mui/material/Grid2';
 
 import img from "../../assets/img/Exportar_img_all";
+import { expresionsRegulars, MaxText_number_Expression,Email_Expression } from '../../assets/js/ExpresionRegulares';
+
+// import libreria emailJS
+import emailjs from '@emailjs/browser';
+// libreria de alertas notistack
+import { SnackbarProvider, useSnackbar } from 'notistack';
 
 function Contacto() {
+  const { enqueueSnackbar } = useSnackbar();
 
-  const [selectlistPaises,setSelectListPaises] = useState()
+  const [selectlistPaises,setSelectListPaises] = useState([])
+  const [nombreusuario,setNombreusuario] = useState({dato:null,error:false,message:'',color:null,fucosed: null})
+  const [correousuario,setCorreousuario] = useState({dato:null,error:false,message:'',color:null,fucosed: null})
+  const [mensaje,setMensaje] = useState({dato:null,error:false,message:'',color:null,fucosed: null})
+  const [disableSubmitContacto,setDisableSubmitContacto] = useState(true)
   const [listPaises,setListPaises] = useState([
     { "pais": "Afganistán" },
     { "pais": "Albania" },
@@ -225,6 +236,66 @@ function Contacto() {
     { "pais": "Zimbabue" }
   ])
 
+  const form = useRef();
+
+  const HandleSubmitContacto = (event) =>{
+    event.preventDefault()
+    console.log('formualrio enviado:', 
+      nombreusuario.dato,
+      correousuario.dato,
+      selectlistPaises.pais,
+      mensaje.dato,
+    )
+    const serviceID = 'default_service';
+    const templateID = 'template_cu2fqyf';
+    const publicKey = import.meta.env.VITE_EMAILJS_KEY;
+
+    emailjs
+      .sendForm(serviceID, templateID, form.current, {
+        publicKey: publicKey,
+      })
+      .then(
+        () => {
+          enqueueSnackbar('su correo fue enviado exitosamente', { variant: 'success' });
+
+        },
+        (error) => {
+          enqueueSnackbar('Algo fallo al enviar el correo', { variant: 'error' });
+          // console.log('FAILED...', error.text);
+        },
+      );
+      // deshabilitar el boton despues de 2s
+      setTimeout(() => {
+        setDisableSubmitContacto(true)
+      }, 2000);
+  }
+  // campos vacios 
+  const validateCorreousuario = (value) => {
+    Email_Expression(value,setCorreousuario)
+  }
+  const validateNombreusuario = (value) => {
+    MaxText_number_Expression(value,setNombreusuario)
+  }
+  const validateMessage = (value) => {
+    MaxText_number_Expression(value,setMensaje)
+  }
+
+  // validate 
+  let select_tipo_pais = document.getElementById('select_tipo_pais')
+  useEffect(() =>{
+    
+    if(
+        !expresionsRegulars.emailRegex.test(correousuario.dato) || correousuario.dato === null || correousuario.dato === undefined ||
+        !expresionsRegulars.maxtextonumberRegex.test(nombreusuario.dato) || nombreusuario.dato === null || nombreusuario.dato === undefined ||
+        !expresionsRegulars.maxtextonumberRegex.test(mensaje.dato) || mensaje.dato === null || mensaje.dato === undefined ||
+        selectlistPaises === undefined || selectlistPaises == '' || selectlistPaises == null || select_tipo_pais.value.length === 0|| select_tipo_pais.value.length === null  
+      ){
+        setDisableSubmitContacto(true)
+      } else{
+      setDisableSubmitContacto(false)
+    } 
+
+  }, [correousuario,nombreusuario,mensaje,selectlistPaises])
   return (
     <>
       <Box component='div' className='section section-portafolio section-contact'>
@@ -237,30 +308,50 @@ function Contacto() {
         <Box component='div' sx={{my:'0.5rem',width:'90%',mx:'auto'}}>
           <Stack sx={{ width: '100%' }} spacing={2} >
               <Alert variant="filled" severity="success" sx={{textAlign:'center',display:'flex',alignContent:'center',justifyContent:'center'}}>
-              Transforma tu visión en una realidad digital. Contáctame, estoy listo para transformar tus desafíos en éxitos o formar parte de tu organización.
+              Transforma tu visión en una realidad digital. Contáctame, estoy listo para transformar tus desafíos en éxitos y formar parte de tu organización.
               </Alert>
           </Stack>
         </Box>
 
-        <Box component='div' className='form-contacto' sx={{width:'90%',margin:'auto',display:'flex',alignItems:'center',justifyContent:'space-between',backgroundColor:'#7777773f',p:'0.5rem',borderRadius:'10px'}} >
+        <Box component='div' className='form-contacto' sx={{width:'90%',margin:'auto',display:'flex',alignItems:'center',justifyContent:'space-between',backgroundColor:'#fff',p:'0.5rem',borderRadius:'10px'}} >
 
-          <Box component='form' sx={{width:'100%',height:'100%',p:'0.5rem',borderRadius:'5px'}}>
+          <Box component='form' ref={form} id='form' sx={{width:'100%',height:'100%',p:'0.5rem',borderRadius:'5px'}} onSubmit={HandleSubmitContacto}>
             <Box component='div'>
               <Grid container spacing={2} sx={{mt:1}}>
                                 
+                <Grid item size={{xs:12, md:12}}>
+                  <TextField
+                    fullWidth
+                    type="email"
+                    id="correo"
+                    label="Correo"
+                    name='correo'
+                    placeholder='Correo: reclutador,empresa,usuario...'
+                    value={correousuario.dato }
+                    onChange={(e) => validateCorreousuario(e.target.value)}
+                    // onChange={(e) => validateCedulaPoder_empresa(e.target.value)}
+                    error={correousuario.error}
+                    helperText ={correousuario.message}
+                    color={correousuario.color}
+                    focused={correousuario.fucosed}
+                                                                    
+                  />
+                </Grid>
                 <Grid item size={{xs:12, md:6}}>
                   <TextField
                     fullWidth
-                    id="Nombre"
+                    type="text"
+                    id="name"
                     label="Nombre"
+                    name="name"
                     placeholder='Nombre: reclutador,empresa,usuario...'
-                    // value={cedulaPoder.dato }
-                    onChange={(e) => e.target.value}
+                    value={nombreusuario.dato }
+                    onChange={(e) => validateNombreusuario(e.target.value)}
                     // onChange={(e) => validateCedulaPoder_empresa(e.target.value)}
-                    // error={cedulaPoder.error}
-                    // helperText ={cedulaPoder.message}
-                    // color={cedulaPoder.color}
-                    // focused={cedulaPoder.fucosed}
+                    error={nombreusuario.error}
+                    helperText ={nombreusuario.message}
+                    color={nombreusuario.color}
+                    focused={nombreusuario.fucosed}
                                                                     
                   />
                 </Grid>
@@ -268,6 +359,7 @@ function Contacto() {
                   <Autocomplete 
                     fullWidth
                     id="select_tipo_pais" 
+                    name="select_tipo_pais" 
                     options={listPaises}
                     onChange={(e,newValue) => {
                       setSelectListPaises({
@@ -282,26 +374,35 @@ function Contacto() {
                 <Grid item size={{xs:12, md:12}}>
                   <TextField 
                     fullWidth
+                    type="text"
                     id="mensaje"
                     label="Mensaje"
+                    name="message"
                     multiline
                     minRows={5}
                     maxRows={10}
                     placeholder="Ingresar su Mensaje"
-                    // defaultValue={estatus_solicitud}
-                    // sx={{ color: '#1dba6cef' }}
-                    // color={colorEstatusSolicitud}
-                    // color={estatus_solicitud ? "warning" : "primary"}
-                    // focused
-                    // variant="filled"
+                    value={mensaje.dato}
+                    onChange={(e) => validateMessage(e.target.value)}
+                    error={mensaje.error}
+                    helperText ={mensaje.message}
+                    color={mensaje.color}
+                    focused={mensaje.fucosed}
                     />
                 </Grid>
                   
               </Grid>
+              <Box component='div' sx={{my:'0.5rem',width:'100%',mx:'auto'}}>
+                <Stack sx={{ width: '100%' }} >
+                    <Alert variant="filled" severity="warning" sx={{textAlign:'center',display:'flex',alignContent:'center',justifyContent:'center'}}>
+                    Ingresa un correo existente o válido al cual yo pueda responderte cuando me hayas contacto.
+                    </Alert>
+                </Stack>
+              </Box>
               <Box 
                     sx={{mt:2,float:'right'}}
                 >
-                <Button variant="contained" color="info">
+                <Button type='submit' variant="contained" color="info" disabled={disableSubmitContacto}>
                     Enviar mensaje
                 </Button>
               </Box>
@@ -309,7 +410,8 @@ function Contacto() {
           </Box>
 
           <Box component='div' className='img-contacto'>
-            <img src={img.contact} alt="" style={{width:'100%',height:'300px',borderRadius:'5px'}}/>
+            <img src={img.sendEmail} alt="" style={{width:'100%',borderRadius:'5px'}}/>
+            {/* <img src={img.contact} alt="" style={{width:'100%',height:'300px',borderRadius:'5px'}}/> */}
           </Box>
         </Box>
         

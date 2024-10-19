@@ -10,6 +10,7 @@ import Bootstrap_logo from './Bootstrap_logo.png'
 import perfil_portfolio from './perfil_portfolio.png'
 import developer from './developer.jpg'
 import contact from './contact.jpg'
+import sendEmail from './sendEmail.svg'
 
 export default {
     'foto_perfil' : foto_perfil,
@@ -24,4 +25,5 @@ export default {
     'perfil_portfolio' : perfil_portfolio,
     'developer' : developer,
     'contact' : contact,
+    'sendEmail' : sendEmail,
 }
