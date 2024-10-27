@@ -9,7 +9,7 @@ import ContactMailIcon from '@mui/icons-material/ContactMail';
 
 function Navbard() {
     const [isOpen, setIsOpen] = useState(false);
-    const [activeButton, setActiveButton] = useState(""); // Estado para el botón activo
+    const [activeButton, setActiveButton] = useState("inicio"); // Estado para el botón activo
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
