@@ -12,6 +12,7 @@ function Footer() {
     <>
       <Box 
           component="footer"
+          id='footer'
           className='container-footer'
           sx={{
             backdropFilter: 'blur(16px) saturate(180%)',

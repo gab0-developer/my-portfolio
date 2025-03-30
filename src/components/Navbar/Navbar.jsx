@@ -17,6 +17,7 @@ import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import HomeIcon from '@mui/icons-material/Home';
 import WorkIcon from '@mui/icons-material/Work';
 import EmailIcon from '@mui/icons-material/Email';
+import InfoIcon from '@mui/icons-material/Info';
 
 function Navbar() {
   const theme = useTheme();
@@ -82,6 +83,14 @@ function Navbar() {
             >
               <EmailIcon /> Contacto
             </ScrollLink>
+            <ScrollLink 
+              to="footer" 
+              smooth={true} 
+              duration={500}
+              style={{ textDecoration: 'none', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 1 }}
+            >
+              <InfoIcon /> Más información
+            </ScrollLink>
 
             {/* Añade más items según necesites */}
           </Box>
@@ -132,6 +141,16 @@ function Navbar() {
                   style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: 1 }}
                 >
                   <EmailIcon /> Contacto
+                </ScrollLink>
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <ScrollLink 
+                  to="footer" 
+                  smooth={true} 
+                  duration={500}
+                  style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: 1 }}
+                >
+                  <InfoIcon /> Más información
                 </ScrollLink>
               </MenuItem>
             </Menu>
