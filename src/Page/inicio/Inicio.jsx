@@ -19,16 +19,16 @@ function Inicio() {
 
   return (
     <>
-      <Container maxWidth="xl">
-        <Box component='div' className='section container-inicio'>
+      <Container id='inicio' maxWidth="xl" className='container-padre'>
+        <Box component='div' className='section container-inicio' sx={{ minHeight: '100vh', scrollMarginTop: '64px' }}>
           <Box component='div' className='container-title-inicio'>
             <Box component='div' className='title-inicio'>
-              <Typography variant="h4" className='text-perfil' id='text-titles-subtitles' >Developer</Typography>
+              <Typography variant="h4" className='text-perfil' id='text-titles-subtitles' data-aos="fade-up" >Developer</Typography>
             </Box>
             <Box component='div'>
               <Typography variant="h2" className='textanimation-perfil' ></Typography>
             </Box>
-            <Box component='div' className='link-perfil'>
+            <Box component='div' className='link-perfil' data-aos="fade-up">
                 <Tooltip title="Descarga mi currículum para descubrir cómo mis habilidades y experiencia pueden desarrolar tus proyectos web." placement="top" arrow>
                   <a href="../../../public/cv/Síntesis_Curricular_Gabriel-Rincón.pdf" target="_blank" rel="noopener noreferrer"
                         style={{color:'#fff',marginBottom:'2px'}}>
@@ -56,7 +56,7 @@ function Inicio() {
               </Box>
           </Box>
           {/* image perfil */}
-          <Box component='div' className='foto-perfil' >
+          <Box component='div' className='foto-perfil' data-aos="fade-left">
             <img src={img.perfil_portfolio} alt="" style={{width:'100%'}} />
           </Box>
           

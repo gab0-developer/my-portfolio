@@ -1,0 +1,37 @@
+
+  /* Responsive para móviles */
+  @media (max-width: 600px) {
+    .MuiIconButton-root {
+      margin: 0 8px;
+    }
+  }
+@media (max-width: 900px) {
+    .container-footer {
+        margin-top: 6rem;
+    }
+}
+@media (max-width: 650px) {
+    .container-footer {
+        margin-top: 8rem;
+    }
+}
+@media (max-width: 550px) {
+    .container-footer {
+        margin-top: 10rem;
+    }
+}
+@media (max-width: 450px) {
+    .container-footer {
+        margin-top: 8rem;
+    }
+}
+@media (max-width: 400px) {
+    .container-footer {
+        margin-top: 8rem;
+    }
+}
+@media (max-width: 370px) {
+    .container-footer {
+        margin-top: 12rem;
+    }
+}

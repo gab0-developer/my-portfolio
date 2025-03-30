@@ -11,6 +11,7 @@ import emailjs from '@emailjs/browser';
 // libreria de alertas notistack
 import { SnackbarProvider, useSnackbar } from 'notistack';
 
+
 function Contacto() {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -298,7 +299,10 @@ function Contacto() {
   }, [correousuario,nombreusuario,mensaje,selectlistPaises])
   return (
     <>
-      <Box component='div' className='section section-portafolio section-contact'>
+      <Box component='div' id='contacto' className='section section-contact' sx={{ minHeight: '100vh', scrollMarginTop: '64px' }}
+        data-aos="fade-up"
+        data-aos-duration="3000"
+      >
         
         <Box component='div' className='title-contacto'>
           <Typography variant="h3" className='title' id='text-titles-subtitles' sx={{my:'1rem',textAlign:'center'}}>
@@ -313,7 +317,7 @@ function Contacto() {
           </Stack>
         </Box>
 
-        <Box component='div' className='form-contacto' sx={{width:'90%',margin:'auto',display:'flex',alignItems:'center',justifyContent:'space-between',backgroundColor:'#fff',p:'0.5rem',borderRadius:'10px'}} >
+        <Box component='div' className='form-contacto' sx={{width:'90%',margin:'auto',display:'flex',alignItems:'center',justifyContent:'space-between',backgroundColor:'#EEEEEE',p:'0.5rem',borderRadius:'10px'}} >
 
           <Box component='form' ref={form} id='form' sx={{width:'100%',height:'100%',p:'0.5rem',borderRadius:'5px'}} onSubmit={HandleSubmitContacto}>
             <Box component='div'>
@@ -410,8 +414,7 @@ function Contacto() {
           </Box>
 
           <Box component='div' className='img-contacto'>
-            <img src={img.sendEmail} alt="" style={{width:'100%',borderRadius:'5px'}}/>
-            {/* <img src={img.contact} alt="" style={{width:'100%',height:'300px',borderRadius:'5px'}}/> */}
+            {/* <img src={img.sendEmail} alt="" style={{width:'100%',borderRadius:'5px'}}/> */}
           </Box>
         </Box>
         

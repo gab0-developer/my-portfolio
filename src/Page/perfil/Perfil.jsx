@@ -14,7 +14,7 @@ import img from "../../assets/img/Exportar_img_all";
 function Perfil() {
   return (
     <>
-      <Box component='div' className='section-portafolio'>
+      <Box component='div' id='perfil' className='section-portafolio' sx={{ minHeight: '100vh', scrollMarginTop: '64px' }} data-aos="flip-left">
         <Container maxWidth="xl">
           <Box component='div' className='container-perfil'>
             <Box component='div' className='container-description-perfil'>
@@ -63,7 +63,7 @@ function Perfil() {
               <img src={img.foto_perfil} alt="" />
             </Box>
           </Box>
-          <Box component='div' className='container-skills-perfil'>
+          <Box component='div' className='container-skills-perfil' data-aos="zoom-in-down">
             <Typography variant="h2" className='skill-title-perfil' id='text-titles-subtitles'>
               Skills
             </Typography>

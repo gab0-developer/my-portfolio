@@ -10,6 +10,7 @@ import '@fontsource/roboto/700.css';
 
 import { CssBaseline, Container } from '@mui/material';
 import { HashRouter  as Router} from 'react-router-dom'
+import Navbar from './components/Navbar/Navbar.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

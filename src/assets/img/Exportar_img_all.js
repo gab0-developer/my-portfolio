@@ -11,6 +11,9 @@ import perfil_portfolio from './perfil_portfolio.png'
 import developer from './developer.jpg'
 import contact from './contact.jpg'
 import sendEmail from './sendEmail.svg'
+import administradorTareas from './administradorTareas.png'
+import citas_medicas from './citas_medicas.png'
+import gestion_libreria from './gestion_libreria.png'
 
 export default {
     'foto_perfil' : foto_perfil,
@@ -26,4 +29,7 @@ export default {
     'developer' : developer,
     'contact' : contact,
     'sendEmail' : sendEmail,
+    'administradorTareas' : administradorTareas,
+    'citas_medicas' : citas_medicas,
+    'gestion_libreria' : gestion_libreria,
 }
