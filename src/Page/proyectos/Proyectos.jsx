@@ -94,7 +94,7 @@ function Proyectos() {
               <Cards
                 img={img.gestion_libreria}
                 title={'Gestión de Libreria'}
-                description='Sistema bibliotecario digital: usuarios solicitan libros, bibliotecarios gestionan préstamos y admins gestionan todo el sistema y ven un panel de control.'
+                description='Usuarios solicitan libros, bibliotecarios gestionan préstamos y administrador gestionan todo el sistema y ve un panel de control.'
                 github={true}
                 urlGithub='https://github.com/gab0-developer/biblioteca'
                 urlDemo='https://youtu.be/EfpxhcAUgXM'
