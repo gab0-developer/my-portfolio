@@ -30,8 +30,10 @@ function Inicio() {
             </Box>
             <Box component='div' className='link-perfil' data-aos="fade-up">
                 <Tooltip title="Descarga mi currículum para descubrir cómo mis habilidades y experiencia pueden desarrolar tus proyectos web." placement="top" arrow>
-                  <a href="../../../public/cv/Síntesis_Curricular_Gabriel-Rincón.pdf" target="_blank" rel="noopener noreferrer"
-                        style={{color:'#fff',marginBottom:'2px'}}>
+                  <a href="https://gab0-developer.github.io/my-portfolio/cv/CV_GABRIEL_RINCON_2025.pdf"
+                    download="CV_GABRIEL_RINCON_2025.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    style={{color:'#fff',marginBottom:'2px'}}>
                     <Fab variant="extended" color='success' sx={{mr:'0.5rem'}}>
                       <CloudDownloadIcon sx={{ mr: 1 }} color='' />
                         Currículum
