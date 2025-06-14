@@ -1,13 +1,64 @@
 :root{
     --color-text-image:linear-gradient(to right, #00DFA2, #0079FF)
 }
+.container-padre {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Evita scroll innecesario */
+}
+
 .container-inicio{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    text-align: center;
+}
+.title-inicio {
+  margin-bottom: 2rem; /* Añade espacio entre el texto animado y los íconos */
+}
+.link-perfil {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem; /* Espacio entre íconos */
+  margin-top: 10rem; /* Espacio adicional para evitar superposición */
+}
+
+.text-perfil {
+  margin-bottom: 1.5rem;
+}
+/* estilo de la libreria animate.js */
+.ml4 {
+  position: relative;
+  font-weight: 900;
+  font-size: 6em;
+  margin: 0.2rem 0;
+    
+}
+
+.ml4 .letters {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  /* top: -3em; */
+  right: 0;
+  opacity: 0;
+
+  background-image: var(--color-text-image);
+    background-clip: text;
+    color: transparent;
+  
 }
 .container-title-inicio{
     width: 130%;
+    margin: 4rem 0;
+    padding: 2rem 0 ;
 }
 .foto-perfil{
     width: 100%;
@@ -16,6 +67,9 @@
     background-image: var(--color-text-image);
     background-clip: text;
     color: transparent;
+}
+.text-titles-description{
+    color: #fff;
 }
 .textanimation-perfil{
     position: relative;
