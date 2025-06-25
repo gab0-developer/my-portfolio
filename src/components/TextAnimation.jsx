@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import anime from "animejs"; // Usa animejs@2.0.2
-import "./AnimatedText.css";
 import { Box } from "@mui/material";
 
 const TextAnimation = () => {

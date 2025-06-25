@@ -2,7 +2,7 @@
     --color-text-image:linear-gradient(to right, #00DFA2, #0079FF)
 }
 body{
-    width: 80%;
+    width: 100%;
     margin: auto;
     background-color: #111111;
     /* background-color: #002945; */
@@ -15,11 +15,13 @@ a{
 }
 .section-portafolio{
     background-color: #1c1c1c;
-    width: 100%;
+    width: 90%;
+    margin: auto;
     height: 100vh;
 }
 .section{
-    width: 100%;
+    width: 90%;
+    margin: auto;
     height: 100vh;
     margin: 1rem 0;
 }
