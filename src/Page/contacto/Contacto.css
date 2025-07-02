@@ -1,3 +1,14 @@
+.form-contacto{
+    width:70%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color:transparent;
+    padding:0.5rem;
+    border-radius:10px;
+    border: 1px solid #ccc;
+}
 @media (max-width: 900px) {
     .img-contacto {
         display: none;

@@ -3,7 +3,6 @@ import './Contacto.css'
 import { Alert, Autocomplete, Box, Button, InputLabel, Stack, TextField, Typography } from '@mui/material'
 import Grid from '@mui/material/Grid2';
 
-import img from "../../assets/img/Exportar_img_all";
 import { expresionsRegulars, MaxText_number_Expression,Email_Expression } from '../../assets/js/ExpresionRegulares';
 
 // import libreria emailJS
@@ -11,6 +10,31 @@ import emailjs from '@emailjs/browser';
 // libreria de alertas notistack
 import { SnackbarProvider, useSnackbar } from 'notistack';
 
+// Estilo base para los campos
+const textFieldStyles = {
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'grey.300', // Borde gris claro
+    },
+    '&:hover fieldset': {
+      borderColor: 'grey.400', // Borde al hacer hover
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'grey.500', // Borde al estar enfocado
+    },
+    color: 'grey.300', // Color del texto
+    backgroundColor: 'grey.900', // Fondo oscuro para contraste
+  },
+  '& .MuiInputLabel-root': {
+    color: 'grey.400', // Color de la etiqueta
+  },
+  '& .MuiInputLabel-root.Mui-focused': {
+    color: 'grey.500', // Color de la etiqueta al estar enfocado
+  },
+  '& .MuiFormHelperText-root': {
+    color: 'grey.500', // Color del texto de ayuda
+  }
+};
 
 function Contacto() {
   const { enqueueSnackbar } = useSnackbar();
@@ -241,12 +265,6 @@ function Contacto() {
 
   const HandleSubmitContacto = (event) =>{
     event.preventDefault()
-    console.log('formualrio enviado:', 
-      nombreusuario.dato,
-      correousuario.dato,
-      selectlistPaises.pais,
-      mensaje.dato,
-    )
     const serviceID = 'default_service';
     const templateID = 'template_cu2fqyf';
     const publicKey = import.meta.env.VITE_EMAILJS_KEY;
@@ -309,15 +327,8 @@ function Contacto() {
             Contactame
           </Typography>
         </Box>
-        <Box component='div' sx={{my:'0.5rem',width:'90%',mx:'auto'}}>
-          <Stack sx={{ width: '100%' }} spacing={2} >
-              <Alert variant="filled" severity="success" sx={{textAlign:'center',display:'flex',alignContent:'center',justifyContent:'center'}}>
-              Transforma tu visión en una realidad digital. Contáctame, estoy listo para transformar tus desafíos en éxitos y formar parte de tu organización.
-              </Alert>
-          </Stack>
-        </Box>
 
-        <Box component='div' className='form-contacto' sx={{width:'90%',margin:'auto',display:'flex',alignItems:'center',justifyContent:'space-between',backgroundColor:'#EEEEEE',p:'0.5rem',borderRadius:'10px'}} >
+        <Box component='div' className='form-contacto' >
 
           <Box component='form' ref={form} id='form' sx={{width:'100%',height:'100%',p:'0.5rem',borderRadius:'5px'}} onSubmit={HandleSubmitContacto}>
             <Box component='div'>
@@ -326,6 +337,7 @@ function Contacto() {
                 <Grid item size={{xs:12, md:12}}>
                   <TextField
                     fullWidth
+                    sx={textFieldStyles}
                     type="email"
                     id="correo"
                     label="Correo"
@@ -344,6 +356,7 @@ function Contacto() {
                 <Grid item size={{xs:12, md:6}}>
                   <TextField
                     fullWidth
+                    sx={textFieldStyles}
                     type="text"
                     id="name"
                     label="Nombre"
@@ -361,6 +374,10 @@ function Contacto() {
                 </Grid>
                 <Grid item size={{xs:12, md:6}}>
                   <Autocomplete 
+                    sx={{
+                      '& .MuiAutocomplete-inputRoot': textFieldStyles['& .MuiOutlinedInput-root'],
+                      '& .MuiInputLabel-root': textFieldStyles['& .MuiInputLabel-root'],
+                    }}
                     fullWidth
                     id="select_tipo_pais" 
                     name="select_tipo_pais" 
@@ -377,6 +394,7 @@ function Contacto() {
                                 
                 <Grid item size={{xs:12, md:12}}>
                   <TextField 
+                    sx={textFieldStyles}
                     fullWidth
                     type="text"
                     id="mensaje"
