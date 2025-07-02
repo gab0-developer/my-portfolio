@@ -280,7 +280,6 @@ function Contacto() {
         },
         (error) => {
           enqueueSnackbar('Algo fallo al enviar el correo', { variant: 'error' });
-          // console.log('FAILED...', error.text);
         },
       );
       // deshabilitar el boton despues de 2s
