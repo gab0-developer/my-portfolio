@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './Contacto.css'
-import { Alert, Autocomplete, Box, Button, InputLabel, Stack, TextField, Typography } from '@mui/material'
+import { Alert, Autocomplete, Box, Button, Stack, TextField, Typography } from '@mui/material'
 import Grid from '@mui/material/Grid2';
 
 import { expresionsRegulars, MaxText_number_Expression,Email_Expression } from '../../assets/js/ExpresionRegulares';

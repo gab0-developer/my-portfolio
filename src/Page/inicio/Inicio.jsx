@@ -1,12 +1,10 @@
 import { Box, Fab, Typography, Container, Tooltip } from '@mui/material'
-import React, { useEffect, useState } from 'react'
 // material ui
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 import './Inicio.css'
-import img from "../../assets/img/Exportar_img_all";
 import TextAnimation from '../../components/TextAnimation';
 
 
