@@ -18,12 +18,14 @@ a{
     width: 90%;
     margin: auto;
     height: 100vh;
+    border-radius: 10px;
 }
 .section{
     width: 90%;
     margin: auto;
     height: 100vh;
-    margin: 1rem 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 #text-titles-subtitles{
     background-image: var(--color-text-image);
