@@ -3,10 +3,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import { Box,Button, IconButton, Tooltip, Typography } from '@mui/material'
 import { GitHub, VideoLibrary } from '@mui/icons-material';
-// img.foto_perfil
 
-
-// {img,title,description,github,urlGithub,urlDemo}
 function Cards({img,title,description,github,urlGithub,urlDemo}) {
   return (
     <>
