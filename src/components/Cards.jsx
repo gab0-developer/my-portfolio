@@ -1,23 +1,28 @@
-import React from 'react'
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
 import { Box,Button, IconButton, Tooltip, Typography } from '@mui/material'
 import { GitHub, VideoLibrary } from '@mui/icons-material';
 // img.foto_perfil
 
 
-
+// {img,title,description,github,urlGithub,urlDemo}
 function Cards({img,title,description,github,urlGithub,urlDemo}) {
   return (
     <>
-        <Box component='div' className='container-card' sx={{p:'0.5rem',backgroundColor:'#F1EFEC'}}>
-            <Box component='div' className='card'>
-                <Box component='div' className='card-img' sx={{display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'#F1EFEC',width:'70%',margin:'auto'}}>
+        <Card sx={{ maxWidth: 345,paddingTop:2,background:'#1c1c1c'}}>
+            <Box component='div' className='card-img' sx={{display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'#F1EFEC',width:'90%',margin:'auto'}}>
                     <img src={img} alt="" style={{width:'100%'}} />
-                </Box>
-                <Box component='div' className='card-content' sx={{height:'100px',overflow:'auto',p:'0.5rem'}}>
-                    <Typography variant="h5" id='text-titles-subtitles'><strong>{title}</strong></Typography>
-                    <Typography variant="body1" sx={{textAlign:'justify',px:'1rem'}}>{description}</Typography>
-                </Box>
             </Box>
+            <CardContent sx={{ height:'100px',overflow:'auto', }}>
+                <Typography gutterBottom variant="h5" component="div" sx={{color:'aquamarine'}}>
+                {title}
+                </Typography>
+                <Typography variant="body2" sx={{ color: '#fff',height:'100px',overflow:'auto'}}>
+                {description}
+                </Typography>
+            </CardContent>
+            <CardActions>
                 {
                     github === true ? (
                         <Box component='div' className='card-btn' sx={{display:'flex',alignItems:'center',justifyContent:'center',my:'0.5rem'}}>
@@ -52,7 +57,7 @@ function Cards({img,title,description,github,urlGithub,urlDemo}) {
 
                         <Box component='div' className='card-btn' sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
                             <Box component='div' className='card-content'>
-                                <Button variant="contained" color="success">
+                                <Button  size="small" variant="contained" color="success">
                                     Ver
                                 </Button>
                             </Box>
@@ -61,8 +66,10 @@ function Cards({img,title,description,github,urlGithub,urlDemo}) {
                         
                     
                 }
-            
-        </Box> 
+                {/* <Button size="small">Share</Button>
+                <Button size="small">Learn More</Button> */}
+            </CardActions>
+        </Card>
     </>
   )
 }
