@@ -107,6 +107,16 @@ function Proyectos() {
                   urlDemo='https://youtu.be/ulJAH60xTFA'
                 />
               </SwiperSlide>
+              <SwiperSlide className='SwiperSlide'>
+                <Cards
+                  img={img.DashboardJob}
+                  title={'Administrador de tareas'}
+                  description='Aplicacion que permite gestionar las postulaciones de empleo mediante flujo estadísticas para monitorear su progreso. Interfaz facil de entender y sencilla. Desarrollada con ReactJS + Material UI y Nodejs + Prisma + JWT y PostgreSQL'
+                  github={true}
+                  urlGithub='https://github.com/gab0-developer/jobtrack'
+                  urlDemo='https://youtu.be/KCPtljQFKlw'
+                />
+              </SwiperSlide>
             </Swiper>
           </Box>
         </Box>
