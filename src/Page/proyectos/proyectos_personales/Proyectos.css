@@ -1,0 +1,46 @@
+.container-proyectos{
+    width: 100%;
+    margin: auto;
+}
+.section .container-proyectos .container-swiper-proyectos{
+    width: 100%;
+    height: 100vh;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+}
+/* Elimina el fondo blanco del contenedor Swiper */
+.swiper {
+  background: transparent !important;
+}
+
+/* Hace transparente cada slide */
+.swiper-slide {
+  background: transparent !important;
+}
+
+/* Opcional: personaliza la paginación */
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #1791a7;
+  opacity: 1;
+}
+
+/* Opcional: personaliza las flechas de navegación */
+.swiper-button-next, 
+.swiper-button-prev {
+  color: #1976d2 !important;
+}
+@media (max-width: 430px) {
+    .container-proyectos .title-proyectos #text-titles-subtitles{
+        font-size: 25px;
+    }
+    .container-proyectos .title-proyectos .description-proyecto{
+        font-size: 13px;
+    }
+    
+}
