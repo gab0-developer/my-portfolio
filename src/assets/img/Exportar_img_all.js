@@ -18,6 +18,15 @@ import administradorTareas from './administradorTareas.png'
 import citas_medicas from './citas_medicas.png'
 import gestion_libreria from './gestion_libreria.png'
 import DashboardJob from './DashboardJob.png'
+// kiwi company
+import FormConfirmTrip from './kiwi_company/FormConfirmTrip.png'
+import formTrip from './kiwi_company/formTrip.png'
+import home from './kiwi_company/home.png'
+import HomeTrip from './kiwi_company/HomeTrip.png'
+import UpdateTrip from './kiwi_company/UpdateTrip.png'
+import ViewTrip from './kiwi_company/ViewTrip.png'
+
+
 
 export default {
     'foto_perfil' : foto_perfil,
@@ -39,4 +48,11 @@ export default {
     'citas_medicas' : citas_medicas,
     'gestion_libreria' : gestion_libreria,
     'DashboardJob' : DashboardJob,
+    // kiwi company
+    'FormConfirmTrip' : FormConfirmTrip,
+    'formTrip' : formTrip,
+    'home' : home,
+    'HomeTrip' : HomeTrip,
+    'UpdateTrip' : UpdateTrip,
+    'ViewTrip' : ViewTrip,
 }
