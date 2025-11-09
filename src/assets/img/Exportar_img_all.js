@@ -25,6 +25,26 @@ import home from './kiwi_company/home.png'
 import HomeTrip from './kiwi_company/HomeTrip.png'
 import UpdateTrip from './kiwi_company/UpdateTrip.png'
 import ViewTrip from './kiwi_company/ViewTrip.png'
+// sacs
+import home_user from './sacs/home_user.png'
+import login_sacs from './sacs/login_sacs.png'
+import register_empresa from './sacs/register_empresa.png'
+import regsiter_empresa_success from './sacs/regsiter_empresa_success.png'
+import solicitud_aprobada from './sacs/solicitud_aprobada.png'
+import solicitud_details from './sacs/solicitud_details.png'
+import solicitud_generar_pdf from './sacs/solicitud_generar_pdf.png'
+import solicitud_pago_credenciales from './sacs/solicitud_pago_credenciales.png'
+import solicitud_pago_pendiente from './sacs/solicitud_pago_pendiente.png'
+import solicitud_pdf from './sacs/solicitud_pdf.png'
+import solicitud_recaudos from './sacs/solicitud_recaudos.png'
+import solicitud_rechazada from './sacs/solicitud_rechazada.png'
+import solicitud_register from './sacs/solicitud_register.png'
+import solicitud_registered_success from './sacs/solicitud_registered_success.png'
+import solicitud_registered from './sacs/solicitud_registered.png'
+import solicitud_renovar_confirmar from './sacs/solicitud_renovar_confirmar.png'
+import solicitud_renovar_error from './sacs/solicitud_renovar_error.png'
+import Ventana_principal from './sacs/Ventana_principal.png'
+
 
 
 
@@ -55,4 +75,24 @@ export default {
     'HomeTrip' : HomeTrip,
     'UpdateTrip' : UpdateTrip,
     'ViewTrip' : ViewTrip,
+    // sacs
+    'home_user' : home_user,
+    'login_sacs' : login_sacs,
+    'register_empresa' : register_empresa,
+    'regsiter_empresa_success' : regsiter_empresa_success,
+    'solicitud_aprobada' : solicitud_aprobada,
+    'solicitud_details' : solicitud_details,
+    'solicitud_generar_pdf' : solicitud_generar_pdf,
+    'solicitud_pago_credenciales' : solicitud_pago_credenciales,
+    'solicitud_pago_pendiente' : solicitud_pago_pendiente,
+    'solicitud_pdf' : solicitud_pdf,
+    'solicitud_recaudos' : solicitud_recaudos,
+    'solicitud_rechazada' : solicitud_rechazada,
+    'solicitud_register' : solicitud_register,
+    'solicitud_registered_success' : solicitud_registered_success,
+    'solicitud_registered' : solicitud_registered,
+    'solicitud_renovar_confirmar' : solicitud_renovar_confirmar,
+    'solicitud_renovar_error' : solicitud_renovar_error,
+    'Ventana_principal' : Ventana_principal,
+
 }
