@@ -26,8 +26,8 @@ function Inicio() {
             <Box component='div'>
               <Box component='div' className='link-perfil' data-aos="fade-up">
                   <Tooltip title="Descarga mi currículum para descubrir cómo mis habilidades y experiencia pueden desarrolar tus proyectos web." placement="top" arrow>
-                    <a href="https://gab0-developer.github.io/my-portfolio/cv/CV_GABRIEL_RINCON_2025.pdf"
-                      download="CV_GABRIEL_RINCON_2025.pdf"
+                    <a href="https://gab0-developer.github.io/my-portfolio/cv/GABRIEL_RINCON_SINTESIS_CURRICULAR_OLD.pdf"
+                      download="CV_GABRIEL_RINCON_PORTAFOLIO.pdf"
                       target="_blank" rel="noopener noreferrer"
                       style={{color:'#fff',marginBottom:'2px'}}>
                       <Fab variant="extended" color='success' sx={{mr:'0.5rem'}}>
